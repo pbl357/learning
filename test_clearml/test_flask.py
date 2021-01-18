@@ -15,15 +15,15 @@ def test():
     index = 121
     for url in urls:
         resp = requests.get(url, verify=False)
-        plt.subplot(index)
         index += 1
         # pillow读取
         pil = Image.open(BytesIO(resp.content))
         plt.imshow(pil)
+        plt.axis('off')
         # cv2读取
         # src = cv2.imdecode(np.frombuffer(resp.content, np.uint8), cv2.IMREAD_UNCHANGED)
         # plt.imshow(src[:, :, ::-1])
-    plt.show()
+        plt.savefig(f'./test{index}.png')
     return {'status': 'success'}
 
 
