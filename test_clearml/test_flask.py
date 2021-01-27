@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-task = Task.init(project_name='pbl_example', task_name='flask', output_uri='http://180.76.145.171:30081/')
+task = Task.init(project_name='pbl_example', task_name='flask', output_uri='/datasets/output')
 @app.route('/test', methods=['POST'])
 def test():
     urls = request.json['urls']
