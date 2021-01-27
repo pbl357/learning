@@ -5,7 +5,7 @@ from clearml import Task
 
 
 def main():
-    task = Task.init(project_name="pbl_example", task_name="tf2 mnist args")
+    task = Task.init(project_name="pbl_example", task_name="tf2 mnist args", output_uri='/datasets/output')
     parameters = {'epochs': 5}
     task.connect(parameters)
 
